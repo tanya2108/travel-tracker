@@ -4,11 +4,67 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack Starter Kit</title>
+  <title>Traveler-Tracker</title>
 </head>
 <body>
-  <img src="./images/turing-logo.png" alt="turing logo">
-  
+  <!-- <img src="./images/turing-logo.png" alt="turing logo"> -->
+  <section class="main-page" >
+    <section class="greeting-area">
+      <img= src="traveler-logo" alt="">
+      <h1>Welcome</h1>
+    </section>
+    <section class="cost-area">
+      <form class="plan-trip">
+        <div class="fields">
+          <label for="Date"></label>
+          <input type="text" placeholder="2020/11/30" name="" value="">
+        </div>
+        <div class="duration">
+          <label for="Length of Time"></label>
+          <input type="text" placeholder="10" name="" value="">
+        </div>
+        <div class="fields">
+          <label for="Numbers of Travelers"></label>
+          <input type="text" placeholder="2" name="" value="">
+        </div>
+        <div class="fields">
+          <label for="Destinations"></label>
+          <select name="destinations" id="places">
+          <option value="a">a</option>
+          <option value="b">b</option>
+          <option value="c">c</option>
+          <option value="d">d</option>
+          <option value="e">e</option>
+        </select>
+        <input type="submit" value="Submit"/>
+        </div>
+      </form>
+    </section>
+    <section class="trips-area">
+      <div class="trip-box" id="present">
+      </div>
+      <div class="trip-box" id="upcoming">
+      </div>
+      <div class="trip-box" id="pending">
+      </div>
+      <div class="trip-box" id="past">
+      </div>
+    </section>
+  </section>
+  <section class="login-page hidden">
+    <section class="login-box">
+      <form>
+        <div class="fields">
+          <label for="User Name"></label>
+          <input type="text" placeholder="traveler" name="" value="">
+        </div>
+        <div class="fields">
+          <label for="Password"></label>
+          <input type="text" placeholder="********" name="" value="">
+        </div>
+      </form>
+    </section>
+  </section>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
   <script src="bundle.js"></script>
 
