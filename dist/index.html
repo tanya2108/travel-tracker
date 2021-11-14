@@ -10,56 +10,62 @@
   <!-- <img src="./images/turing-logo.png" alt="turing logo"> -->
   <section class="main-page" >
     <section class="greeting-area">
-      <img= src="traveler-logo" alt="">
-      <h1>Welcome</h1>
-    </section>
-    <section class="cost-area">
-      <form class="plan-trip">
-        <div class="fields">
-          <label for="Date"></label>
-          <input type="text" placeholder="2020/11/30" name="" value="">
+      <!-- <img src="https://live.staticflickr.com/5828/22384878654_a382f1a0f8_b.jpg" alt="Paris by Danny on flickr">
+      <h1>Welcome</h1> -->
+      </section>
+    <section class="bottom-section">
+      <section class="cost-area">
+        <form class="plan-trip">
+          <div class="fields">
+            <label for="Date"></label>
+            <input type="text" placeholder="2020/11/30" name="" value="">
+          </div>
+          <div class="duration">
+            <label for="Length of Time"></label>
+            <input type="text" placeholder="10" name="" value="">
+          </div>
+          <div class="fields">
+            <label for="Numbers of Travelers"></label>
+            <input type="text" placeholder="2" name="" value="">
+          </div>
+          <div class="fields">
+            <label for="Destinations"></label>
+            <select name="destinations" id="places">
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+            <option value="d">d</option>
+            <option value="e">e</option>
+          </select>
+          <input type="submit" value="Submit"/>
+          </div>
+        </form>
+      </section>
+      <section class="trips-area">
+        <div class="trip-circle" id="present">
+          <h2>Present</h2>
         </div>
-        <div class="duration">
-          <label for="Length of Time"></label>
-          <input type="text" placeholder="10" name="" value="">
+        <div class="trip-circle" id="upcoming">
+          <h2>Upcoming</h2>
         </div>
-        <div class="fields">
-          <label for="Numbers of Travelers"></label>
-          <input type="text" placeholder="2" name="" value="">
+        <div class="trip-circle" id="pending">
+          <h2>pending</h2>
         </div>
-        <div class="fields">
-          <label for="Destinations"></label>
-          <select name="destinations" id="places">
-          <option value="a">a</option>
-          <option value="b">b</option>
-          <option value="c">c</option>
-          <option value="d">d</option>
-          <option value="e">e</option>
-        </select>
-        <input type="submit" value="Submit"/>
+        <div class="trip-circle" id="past">
+          <h2>Past</h2>
         </div>
-      </form>
-    </section>
-    <section class="trips-area">
-      <div class="trip-box" id="present">
-      </div>
-      <div class="trip-box" id="upcoming">
-      </div>
-      <div class="trip-box" id="pending">
-      </div>
-      <div class="trip-box" id="past">
-      </div>
+      </section>
     </section>
   </section>
   <section class="login-page hidden">
     <section class="login-box">
       <form>
         <div class="fields">
-          <label for="User Name"></label>
+          <label for="User Name">User Name</label>
           <input type="text" placeholder="traveler" name="" value="">
         </div>
         <div class="fields">
-          <label for="Password"></label>
+          <label for="Password"> Password</label>
           <input type="text" placeholder="********" name="" value="">
         </div>
       </form>
