@@ -23,6 +23,7 @@ let destinations;
 const getData = () => {
   const allPromise = Promise.all([fetchData('travelers'), fetchData('trips'), fetchData('destinations')])
     .then(data => {createTraveler(data)})
+    // .then(displayTrips());
 }
 
 const createTraveler = (data) => {
@@ -41,7 +42,6 @@ const createTraveler = (data) => {
 const displayTrips = () => {
   traveler.trips = trips.retrieveTripData(traveler.id);
   traveler.destinations = destinations.data;
-  console.log(traveler.destinations)
   domUpdates.displayPresentTrip(traveler.returnCurrentTripInfo('2021/11/16'), /*destinations*/);
   domUpdates.displayUpcomingTrips(traveler.returnUpcomingTripsInfo('2021/11/16'), /*destinations*/);
   domUpdates.displayPendingTrips(traveler.returnPendingTripsInfo('2021/11/16'), /*destinations*/);
