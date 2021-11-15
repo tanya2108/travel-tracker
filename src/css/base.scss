@@ -1,6 +1,122 @@
 /* This is an example of how to import a partial scss file*/
 @import '_variables';
 
+*:after {
+  margin: 0;
+  text-align: center;
+}
+
 body {
-  background: $primary-background;
+  border: 0;
+
+}
+
+
+.hidden {
+  display: none!important;
+}
+
+/* ----- Main Poster Section -------- */
+.main-page {
+  background: $torquoise;
+  height: 100vh;
+  border: 3px red solid;
+}
+
+.greeting-area {
+  height: 20vh;
+  weight: 160vh;
+
+}
+
+.bottom-section {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+}
+
+.cost-area {
+  background-color: pink;
+  height: 80vh;
+  width: 50vh;
+}
+
+.trips-area {
+  border: 3px solid green;
+  display: flex;
+  flex-wrap: wrap;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  height: 80vh;
+  width: 100%;
+
+
+  // grid-auto-rows: 350px;
+}
+
+// .trips-area > .trip-box {
+//   flex-basis: 25%;
+// }
+
+
+
+// border: 3px solid pink;
+// height: 300px;
+// width: 300px;
+// border-top-left-radius: 100%;
+// border-top-right-radius: 0;
+// border-bottom-left-radius: 0;
+// border-bottom-right-radius: 0;
+// background-color: green;
+.trip-circle {
+  width: 45%;
+  height: 45%;
+}
+
+#present {
+  // margin-left: 100px;
+  border: 3px solid pink;
+  // width: 30%;
+  // height: 30%;
+  background: $orange;
+  border-radius: 50%
+}
+
+#upcoming {
+  border: 3px solid pink;
+  // width: 200px;
+  // height: 200px;
+  background: $green-tan;
+  border-radius: 50%
+}
+
+#pending {
+  border: 3px solid pink;
+  // width: 200px;
+  // height: 200px;
+  background: $dark-red;
+  border-radius: 50%
+}
+
+#past {
+  border: 3px solid pink;
+  // width: 200px;
+  // height: 200px;
+  background: $tan;
+  border-radius: 50%
+}
+
+
+/* ----- Login Section -------- */
+
+.login-page {
+  background: blue;
+  height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  border: 3px solid red;
 }
