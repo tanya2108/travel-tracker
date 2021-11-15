@@ -33,7 +33,7 @@ describe('TravelerRepo', () => {
   });
 
   it('should be able to retrieve an user by id', function() {
-    expect(travelerRepo.retrieveUser(2)).to.deep.equal(
+    expect(travelerRepo.retrieveTraveler(2)).to.deep.equal(
       {
         id: 2,
         name: 'Christy Allen',
@@ -43,7 +43,7 @@ describe('TravelerRepo', () => {
   });
 
   it('should return error message if no user found', function() {
-  expect(travelerRepo.retrieveUser(6)).to.equal('Sorry, this traveler is not in the data!')
+  expect(travelerRepo.retrieveTraveler(6)).to.equal('Sorry, this traveler is not in the data!')
 })
 
 });
