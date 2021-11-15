@@ -26,7 +26,14 @@ body {
 .greeting-area {
   height: 20vh;
   weight: 160vh;
+  display: flex;
+  align-items: center;
+}
 
+h1 {
+  border: 3px solid red;
+  margin-left: 30%;
+  font-size: 60px;
 }
 
 .bottom-section {
@@ -42,66 +49,43 @@ body {
 }
 
 .trips-area {
-  border: 3px solid green;
-  display: flex;
-  flex-wrap: wrap;
-  // display: grid;
-  // grid-template-columns: repeat(2, 1fr);
+  // display: flex;
+  // flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   height: 80vh;
   width: 100%;
+  text-align: center;
 
 
   // grid-auto-rows: 350px;
 }
 
-// .trips-area > .trip-box {
-//   flex-basis: 25%;
-// }
+h2 {
+}
 
-
-
-// border: 3px solid pink;
-// height: 300px;
-// width: 300px;
-// border-top-left-radius: 100%;
-// border-top-right-radius: 0;
-// border-bottom-left-radius: 0;
-// border-bottom-right-radius: 0;
-// background-color: green;
 .trip-circle {
-  width: 45%;
-  height: 45%;
+  border: 3px solid white;
+  width: 80%;
+  height: 80%;
 }
 
 #present {
-  // margin-left: 100px;
-  border: 3px solid pink;
-  // width: 30%;
-  // height: 30%;
   background: $orange;
   border-radius: 50%
 }
 
 #upcoming {
-  border: 3px solid pink;
-  // width: 200px;
-  // height: 200px;
   background: $green-tan;
   border-radius: 50%
 }
 
 #pending {
-  border: 3px solid pink;
-  // width: 200px;
-  // height: 200px;
-  background: $dark-red;
+  background: $red;
   border-radius: 50%
 }
 
 #past {
-  border: 3px solid pink;
-  // width: 200px;
-  // height: 200px;
   background: $tan;
   border-radius: 50%
 }

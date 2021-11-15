@@ -12,6 +12,8 @@ import Traveler from './Traveler';
 import Destinations from './Destinations';
 import Trips from './Trips';
 import {fetchData} from './api';
+import domUpdates from './domUpdates';
+
 
 let travelers;
 let traveler;
@@ -21,6 +23,7 @@ let destinations;
 const getData = () => {
   const allPromise = Promise.all([fetchData('travelers'), fetchData('trips'), fetchData('destinations')])
     .then(data => {createTraveler(data)})
+    // .then(displayTrips());
 }
 
 const createTraveler = (data) => {
@@ -32,9 +35,33 @@ const createTraveler = (data) => {
   console.log(traveler)
   console.log(trips)
   console.log(destinations)
+  domUpdates.displayGreeting(traveler, traveler.returnFirstName());
+  displayTrips();
 }
 
-const 
+const displayTrips = () => {
+  traveler.trips = trips.retrieveTripData(traveler.id);
+  traveler.destinations = destinations.data;
+  domUpdates.displayPresentTrip(traveler.returnCurrentTripInfo('2021/11/16'), /*destinations*/);
+  domUpdates.displayUpcomingTrips(traveler.returnUpcomingTripsInfo('2021/11/16'), /*destinations*/);
+  domUpdates.displayPendingTrips(traveler.returnPendingTripsInfo('2021/11/16'), /*destinations*/);
+  domUpdates.displayPastTrips(traveler.returnPastTripsInfo('2021/11/16'), /*destinations*/);
+
+  }
+//
+//
+//
+// const displayUpcomingTrips = () => {
+//
+// }
+//
+// const displayPendingTrips = () => {
+//
+// }
+//
+// const displayPastTrips = () => {
+//
+// }
 
 
 const onPageLoad = () => {
