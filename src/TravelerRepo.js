@@ -1,9 +1,9 @@
 class TravelerRepo {
-  constructor(travelerData) {
-    this.data = travelerData
+  constructor(travelers) {
+    this.data = travelers;
   }
 
-  retrieveUser(id) {
+  retrieveTraveler(id) {
     const specifcTraveler = this.data.find((traveler) => {
       return traveler.id === id;
     });
@@ -12,6 +12,10 @@ class TravelerRepo {
     } else {
       return specifcTraveler;
     }
+  }
+
+  retrieveRandomTraveler() {
+    return Math.floor(Math.random() * this.data.length);
   }
 }
 
