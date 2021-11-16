@@ -3,54 +3,61 @@ const presentCircle = document.getElementById('presentTrip');
 const upcomingCircle = document.getElementById('upcomingTrips');
 const pendingCircle = document.getElementById('pendingTrips');
 const pastCircle = document.getElementById('pastTrips');
+const yearlyCost = document.getElementById('yearlyCost')
 
 const domUpdates = {
   displayGreeting(traveler, firstName) {
     welcomeMessage.innerText = `Welcome ${firstName}!`;
   },
 
-  displayPresentTrip(presentTrip) {
-    if(presentTrip.length === 0){
+  displayPresentTrip(presentTrip, traveler) {
+    if(presentTrip.length === 0) {
       presentCircle.innerHTML += `<p> No Present Trip </p>`
     } else {
-    presentTrip.forEach((trip) => {
-      presentCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID)}, Duration: ${trip.duration} </p> `
+      presentTrip.forEach((trip) => {
+        presentCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p> `
     });
   }
-    // presentCircle.innerHTML = `${presentTrip}`;
   },
 
-  displayUpcomingTrips(upcomingTrips) {
-    if(upcomingTrips.length === 0){
+  displayUpcomingTrips(upcomingTrips, traveler) {
+    if(upcomingTrips.length === 0) {
       upcomingCircle.innerHTML += `<p> No Upcoming Trips </p>`
     } else {
-    upcomingTrips.forEach((trip) => {
-      upcomingCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID)}, Duration: ${trip.duration} </p> `
+      upcomingTrips.forEach((trip) => {
+        upcomingCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p> `
     });
     }
   },
 
-  displayPendingTrips(pendingTrips) {
-    if(pendingTrips.length === 0){
+  displayPendingTrips(pendingTrips, traveler) {
+    if(pendingTrips.length === 0) {
       pendingCircle.innerHTML += `<p> No Pending Trips </p>`
     } else {
-    pendingTrips.forEach((trip) => {
-      pendingCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID)}, Duration: ${trip.duration} </p> `
+      pendingTrips.forEach((trip) => {
+        pendingCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p> `
     });
-  }
-    // pendingCircle.innerText = `Date: ${pendingTrips.date}; Travelers: ${pendingTrips.travelers}; Status: ${pendingTrips.travelers};`
+    }
   },
 
-  displayPastTrips(pastTrips) {
-    // console.log(trip.retrieveDestinationData(trip.destinationID), 'destination')
+  displayPastTrips(pastTrips, traveler) {
     if(pastTrips.length === 0){
       pastCircle.innerHTML += `<p> No Pending Trips </p>`
     } else {
     pastTrips.forEach((trip) => {
-      pastCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID)}, Duration: ${trip.duration} </p> `
+      pastCircle.innerHTML += `<p>Date: ${trip.date}, Destination:            ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p>`
     });
   }
-}
+},
+
+    displayCostPerYear(totalCost){
+      const total = totalCost.lodgingCost + totalCost.flightCost + totalCost.agentCost
+      yearlyCost.innerHTML += `
+        <h3>Total Cost: ${total.toLocaleString()}</h3>
+        <p> 1. Lodging Cost: ${totalCost.lodgingCost.toLocaleString()}</p>
+        <p> 2. Flight Cost: ${totalCost.flightCost.toLocaleString()}</p>
+        <p> 3. Agent Cost: ${totalCost.agentCost.toLocaleString()}</p>`
+    }
 
 
 }
