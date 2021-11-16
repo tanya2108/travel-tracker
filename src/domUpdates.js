@@ -12,6 +12,9 @@ let formFeedback = document.getElementById('formFeedback');
 let postFeedback = document.getElementById('postFeedback');
 const estimateCost = document.getElementById('estimateCost');
 const estimateButton = document.getElementById('estimate');
+const loginFeedback = document.getElementById('loginFeedback')
+const loginPage = document.getElementById('login')
+const mainPage = document.getElementById('main')
 
 const domUpdates = {
   displayGreeting(traveler, firstName) {
