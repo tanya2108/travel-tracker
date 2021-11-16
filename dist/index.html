@@ -18,30 +18,37 @@
       <section class="cost-area">
         <form class="plan-trip">
           <div class="fields">
-            <label for="Date"></label>
-            <input type="text" placeholder="2020/11/30" name="" value="">
-          </div>
-          <div class="duration">
-            <label for="Length of Time"></label>
-            <input type="text" placeholder="10" name="" value="">
+            <label for="Start Date">Date</label>
+            <input type="text" id=startDateInput placeholder="YYYY/MM/DD" name="" value="">
           </div>
           <div class="fields">
-            <label for="Numbers of Travelers"></label>
-            <input type="text" placeholder="2" name="" value="">
+            <label for="Length of Time">Duration</label>
+            <input type="number" min="1" max="20" id=durationInput placeholder="Please enter a number" name="" value="">
           </div>
           <div class="fields">
-            <label for="Destinations"></label>
+            <label for="Numbers of Travelers">Travelers</label>
+            <input type="number" min="1" max="6" id=travelersInput placeholder="Please enter number" name="" value="">
+          </div>
+          <div class="fields">
+            <label for="Destinations">Destinations</label>
             <select name="destinations" id="places">
-            <option value="Lima, Peru">Lima, Peru</option>
-            <option value="Stockholm, Sweden">Stockholm, Sweden</option>
-            <option value="Sydney, Austrailia">Sydney, Austrailia</option>
-            <option value="Cartagena, Colombia">Cartagena, Colombia</option>
-            <option value="Madrid, Spain">Madrid, Spain</option>
-          </select>
-          <input type="submit" value="Submit"/>
+              <option value="1">Lima, Peru</option>
+              <option value="2">Stockholm, Sweden</option>
+              <option value="3">Sydney, Austrailia</option>
+              <option value="4">Cartagena, Colombia</option>
+              <option value="5">Madrid, Spain</option>
+            </select>
           </div>
+          <button id="estimate">Estimate</button>
+          <button id="addNewTrip">Enter</button>
+          <p class="form-feedback" id="formFeedback"></p>
+          <p class="post-feedback" id="postFeedback"></p>
+
+          <!-- <input type="submit" value="Submit"/> -->
         </form>
         <div id="yearlyCost">
+        </div>
+        <div id="estimateCost">
         </div>
       </section>
       <section class="trips-area">

@@ -5,6 +5,7 @@ class Traveler {
     this.travelerType = travelerData.travelerType;
     this.trips = travelerData.trips;
     this.destinations = travelerData.destination;
+    this.estimateCosts = [];
   }
 
   returnFirstName () {
@@ -28,7 +29,7 @@ class Traveler {
       })
         return currentTrip;
       }
-
+      
   returnUpcomingTripsInfo(date) {
     const upcomingTrips = this.trips.sort((a, b) => {
       if (a.date < b.date) {
@@ -82,6 +83,22 @@ class Traveler {
     },{lodgingCost: 0, flightCost: 0, agentCost: 0})
       return allCostInYear;
   }
+
+  returnEstimateCosts(pendingNewTrip) {
+      const newTripCost = pendingNewTrip.reduce((
+        total, trip)=> {
+        const destinationData = this.retrieveDestinationData(trip.destinationID);
+        const lodgingFees = destinationData.estimatedLodgingCostPerDay * trip.duration
+        const flightFees = destinationData.estimatedFlightCostPerPerson * trip.travelers
+        const agentFees = (lodgingFees+flightFees) * .1
+        total['lodgingCost'] = lodgingFees;
+        total['flightCost'] = flightFees;
+        total['agentCost'] = agentFees;
+          return total;
+    },{lodgingCost: 0, flightCost: 0, agentCost: 0})
+      estimateCosts.push(newTripCost)
+      return newTripCost;
+    }
 }
 
 
