@@ -14,7 +14,6 @@ import Trips from './Trips';
 import {fetchData} from './api';
 import domUpdates from './domUpdates';
 
-
 let travelers;
 let traveler;
 let trips;
