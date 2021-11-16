@@ -98,7 +98,23 @@ const domUpdates = {
       <p> 3. Agent Cost: ${estimate.agentCost.toLocaleString()}</p>`
     },
 
+  showMainPage() {
+    show(mainPage);
+    hide(loginPage);
+  },
+
+  displayErrorLogin(){
+    loginFeedback.innerText = 'Login Failed: Username or Password is incorrect. Please try again'
+  }
 
 }
+
+  const show = (element) => {
+    element.classList.remove('hidden')
+  }
+
+  const hide = (element) => {
+    element.classList.add('hidden')
+  }
 
 export default domUpdates;
