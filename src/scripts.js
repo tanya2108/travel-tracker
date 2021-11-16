@@ -29,8 +29,9 @@ const getData = () => {
 }
 
 const createDashboard = (data) => {
-  travelers = new TravelerRepo(data[0].travelers)
-  traveler = new Traveler(data[0].travelers[travelers.retrieveRandomTraveler()]);
+  travelers = new TravelerRepo(data[0].travelers);
+  const myID = Number(userNameInput.value.split('r').pop()-1);
+  traveler = new Traveler(data[0].travelers[myID]);
   trips = new Trips(data[1].trips);
   destinations = new Destinations(data[2].destinations);
   domUpdates.displayGreeting(traveler, traveler.returnFirstName());
@@ -44,7 +45,7 @@ const displayTrips = () => {
   domUpdates.displayPresentTrip(traveler.returnCurrentTripInfo('2021/11/16'), traveler);
   domUpdates.displayUpcomingTrips(traveler.returnUpcomingTripsInfo('2021/11/16'), traveler);
   domUpdates.displayPendingTrips(traveler.returnPendingTripsInfo('2021/11/16'), traveler);
-  domUpdates.displayPastTrips(traveler.returnPastTripsInfo('2021/11/16'), traveler)
+  domUpdates.displayPastTrips(traveler.returnPastTripsInfo('2021/11/16'), traveler);
   }
 
 const displayYearlyCosts = () => {
@@ -122,12 +123,7 @@ const addTripRequest = (event) => {
     }
   }
 
-  // const onPageLoad = () => {
-  //   getData();
-  // }
 
 loginButton.addEventListener('click', checkLogin);
 estimateButton.addEventListener('click', findEstimatedCosts);
 addNewButton.addEventListener('click', addTripRequest);
-
-// window.addEventListener('load', onPageLoad);
