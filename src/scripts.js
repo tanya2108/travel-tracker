@@ -11,8 +11,16 @@ import TravelerRepo from './TravelerRepo';
 import Traveler from './Traveler';
 import Destinations from './Destinations';
 import Trips from './Trips';
-import {fetchData} from './api';
+import {fetchData, addTrip} from './api';
 import domUpdates from './domUpdates';
+
+const addNewButton = document.getElementById('addNewTrip');
+const startDateInput = document.getElementById('startDateInput');
+const durationInput = document.getElementById('durationInput');
+const travelersInput = document.getElementById('travelersInput');
+const destinationInput = document.getElementById('places');
+const estimateButton = document.getElementById('estimate');
+
 
 let travelers;
 let traveler;

@@ -3,7 +3,15 @@ const presentCircle = document.getElementById('presentTrip');
 const upcomingCircle = document.getElementById('upcomingTrips');
 const pendingCircle = document.getElementById('pendingTrips');
 const pastCircle = document.getElementById('pastTrips');
-const yearlyCost = document.getElementById('yearlyCost')
+const yearlyCost = document.getElementById('yearlyCost');
+const startDateInput = document.getElementById('startDateInput');
+const durationInput = document.getElementById('durationInput');
+const travelersInput = document.getElementById('travelersInput');
+const destinationInput = document.getElementById('places');
+let formFeedback = document.getElementById('formFeedback');
+let postFeedback = document.getElementById('postFeedback');
+const estimateCost = document.getElementById('estimateCost');
+const estimateButton = document.getElementById('estimate');
 
 const domUpdates = {
   displayGreeting(traveler, firstName) {
@@ -21,12 +29,12 @@ const domUpdates = {
   },
 
   displayUpcomingTrips(upcomingTrips, traveler) {
-    if(upcomingTrips.length === 0) {
+    if (upcomingTrips.length === 0) {
       upcomingCircle.innerHTML += `<p> No Upcoming Trips </p>`
     } else {
       upcomingTrips.forEach((trip) => {
         upcomingCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p> `
-    });
+      });
     }
   },
 
@@ -36,7 +44,7 @@ const domUpdates = {
     } else {
       pendingTrips.forEach((trip) => {
         pendingCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p> `
-    });
+      });
     }
   },
 
