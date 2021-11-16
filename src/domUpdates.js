@@ -12,6 +12,9 @@ let formFeedback = document.getElementById('formFeedback');
 let postFeedback = document.getElementById('postFeedback');
 const estimateCost = document.getElementById('estimateCost');
 const estimateButton = document.getElementById('estimate');
+const loginFeedback = document.getElementById('loginFeedback')
+const loginPage = document.getElementById('login')
+const mainPage = document.getElementById('main')
 
 const domUpdates = {
   displayGreeting(traveler, firstName) {
@@ -67,9 +70,9 @@ const domUpdates = {
         <p> 3. Agent Cost: ${totalCost.agentCost.toLocaleString()}</p>`
       },
 
-  showSuccessMessage() {
+  showSuccessMessage(cardID) {
     formFeedback.innerText = '';
-    postFeedback.innerText = `Trip with id ${trips.data.length +1 } successfully posted`;
+    postFeedback.innerText = `Trip with ID${cardID} successfully posted`;
   },
 
   clearMessage(){
@@ -86,7 +89,7 @@ const domUpdates = {
     }
   },
 
-  displayEstimateCosts(estimate){
+  displayEstimateCosts(estimate) {
     const total = estimate.lodgingCost + estimate.flightCost + estimate.agentCost
     estimateCost.innerHTML += `
       <h3>Total Cost: ${total.toLocaleString()}</h3>
@@ -95,7 +98,23 @@ const domUpdates = {
       <p> 3. Agent Cost: ${estimate.agentCost.toLocaleString()}</p>`
     },
 
+  showMainPage() {
+    show(mainPage);
+    hide(loginPage);
+  },
+
+  displayErrorLogin(){
+    loginFeedback.innerText = 'Login Failed: Username or Password is incorrect. Please try again'
+  }
 
 }
+
+  const show = (element) => {
+    element.classList.remove('hidden')
+  }
+
+  const hide = (element) => {
+    element.classList.add('hidden')
+  }
 
 export default domUpdates;

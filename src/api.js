@@ -14,12 +14,6 @@ const addTrip = (object) => {
     .then(response => response.json())
 }
 
-
-
-
-
-
-
 export {
   fetchData,
   addTrip,

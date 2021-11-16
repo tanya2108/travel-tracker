@@ -1,12 +1,4 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './css/base.scss';
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
-
 import TravelerRepo from './TravelerRepo';
 import Traveler from './Traveler';
 import Destinations from './Destinations';
@@ -20,6 +12,10 @@ const durationInput = document.getElementById('durationInput');
 const travelersInput = document.getElementById('travelersInput');
 const destinationInput = document.getElementById('places');
 const estimateButton = document.getElementById('estimate');
+const loginButton = document.getElementById('login');
+const userNameInput = document.getElementById('userNameInput');
+const pwInput = document.getElementById('pwInput');
+const userNameValue = document.getElementById('userNameInput').value;
 
 
 let travelers;
@@ -33,8 +29,9 @@ const getData = () => {
 }
 
 const createDashboard = (data) => {
-  travelers = new TravelerRepo(data[0].travelers)
-  traveler = new Traveler(data[0].travelers[travelers.retrieveRandomTraveler()]);
+  travelers = new TravelerRepo(data[0].travelers);
+  const myID = Number(userNameInput.value.split('r').pop()-1);
+  traveler = new Traveler(data[0].travelers[myID]);
   trips = new Trips(data[1].trips);
   destinations = new Destinations(data[2].destinations);
   domUpdates.displayGreeting(traveler, traveler.returnFirstName());
@@ -48,7 +45,7 @@ const displayTrips = () => {
   domUpdates.displayPresentTrip(traveler.returnCurrentTripInfo('2021/11/16'), traveler);
   domUpdates.displayUpcomingTrips(traveler.returnUpcomingTripsInfo('2021/11/16'), traveler);
   domUpdates.displayPendingTrips(traveler.returnPendingTripsInfo('2021/11/16'), traveler);
-  domUpdates.displayPastTrips(traveler.returnPastTripsInfo('2021/11/16'), traveler)
+  domUpdates.displayPastTrips(traveler.returnPastTripsInfo('2021/11/16'), traveler);
   }
 
 const displayYearlyCosts = () => {
@@ -76,9 +73,10 @@ const findEstimatedCosts = (event) => {
 
 const addTripRequest = (event) => {
   event.preventDefault();
+  let cardID = trips.data.length + 1;
   if (domUpdates.checkTripRequestForm()){
     const newTrip = {
-        id: trips.data.length + 1,
+        id: cardID,
         userID: Number(traveler.id),
         destinationID: Number(destinationInput.value),
         travelers: Number(travelersInput.value),
@@ -90,20 +88,42 @@ const addTripRequest = (event) => {
       addTrip(newTrip)
         .then(data => updateTripsData(data))
         .catch(error => console.log(error))
+        domUpdates.showSuccessMessage(cardID);
+        setTimeout(domUpdates.clearMessage, 5000);
     }
-  domUpdates.showSuccessMessage(trips.data);
-  setTimeout(domUpdates.clearMessage, 2000);
-  domUpdates.displayEstimateCosts(findEstimatedCost(total));
+  }
+
+  const checkLogin = (event) => {
+    if (checkUserName() && checkPassword()) {
+      event.preventDefault();
+      domUpdates.showMainPage();
+      getData();
+    } else {
+      domUpdates.displayErrorLogin();
+      setTimeout(domUpdates.clearMessage, 5000);
+    }
+  }
+
+  const checkUserName = () => {
+    const inputValue = userNameInput.value;
+    const inputNumber = Number(inputValue.split('r').pop());
+    const travelerIDs = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50];
+    if (travelerIDs.includes(inputNumber)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  const checkPassword = () => {
+    if (pwInput.value === 'travel') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 
-
-
-
-
-  const onPageLoad = () => {
-    getData();
-  }
-estimateButton.addEventListener('click', findEstimatedCosts)
+loginButton.addEventListener('click', checkLogin);
+estimateButton.addEventListener('click', findEstimatedCosts);
 addNewButton.addEventListener('click', addTripRequest);
-window.addEventListener('load', onPageLoad);

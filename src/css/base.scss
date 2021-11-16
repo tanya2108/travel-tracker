@@ -64,8 +64,6 @@ h1 {
   // grid-auto-rows: 350px;
 }
 
-h2 {
-}
 
 .trip-circle {
   border: 3px solid white;
@@ -98,10 +96,11 @@ h2 {
 
 .login-page {
   background: blue;
-  height: 200vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .login-box {

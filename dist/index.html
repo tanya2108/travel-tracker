@@ -7,11 +7,9 @@
   <title>Traveler-Tracker</title>
 </head>
 <body>
-  <!-- <img src="./images/turing-logo.png" alt="turing logo"> -->
-  <section class="main-page" >
+  <section class="main-page hidden" id="main">
     <section class="greeting-area">
       <img id=icon src="https://img.icons8.com/ios/50/000000/trave-diary.png" alt="travel dairy icon on icons8"/>
-      <!-- <img src="https://live.staticflickr.com/5828/22384878654_a382f1a0f8_b.jpg" alt="Paris by Danny on flickr">-->
       <h1 id=greeting></h1>
       </section>
     <section class="bottom-section">
@@ -43,8 +41,6 @@
           <button id="addNewTrip">Enter</button>
           <p class="form-feedback" id="formFeedback"></p>
           <p class="post-feedback" id="postFeedback"></p>
-
-          <!-- <input type="submit" value="Submit"/> -->
         </form>
         <div id="yearlyCost">
         </div>
@@ -71,18 +67,20 @@
       </section>
     </section>
   </section>
-  <section class="login-page hidden">
+  <section class="login-page" id="login">
     <section class="login-box">
       <form>
         <div class="fields">
           <label for="User Name">User Name</label>
-          <input type="text" placeholder="traveler" name="" value="">
+          <input type="text" id=userNameInput placeholder="traveler" name="" value="">
         </div>
         <div class="fields">
           <label for="Password"> Password</label>
-          <input type="text" placeholder="********" name="" value="">
+          <input type="text" id=pwInput placeholder="********" name="" value="">
         </div>
+        <button id="login">LogIn</button>
       </form>
+      <p class="login-feedback" id="loginFeedback"></p>
     </section>
   </section>
   <!-- Do not include the scripts.js or class files here - it is done by the webpack server -->
