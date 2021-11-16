@@ -70,9 +70,9 @@ const domUpdates = {
         <p> 3. Agent Cost: ${totalCost.agentCost.toLocaleString()}</p>`
       },
 
-  showSuccessMessage() {
+  showSuccessMessage(cardID) {
     formFeedback.innerText = '';
-    postFeedback.innerText = `Trip with id ${trips.data.length +1 } successfully posted`;
+    postFeedback.innerText = `Trip with ID${cardID} successfully posted`;
   },
 
   clearMessage(){
