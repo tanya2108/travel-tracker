@@ -86,7 +86,7 @@ const domUpdates = {
     }
   },
 
-  displayEstimateCosts(estimate){
+  displayEstimateCosts(estimate) {
     const total = estimate.lodgingCost + estimate.flightCost + estimate.agentCost
     estimateCost.innerHTML += `
       <h3>Total Cost: ${total.toLocaleString()}</h3>

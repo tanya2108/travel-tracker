@@ -29,7 +29,7 @@ class Traveler {
       })
         return currentTrip;
       }
-      
+
   returnUpcomingTripsInfo(date) {
     const upcomingTrips = this.trips.sort((a, b) => {
       if (a.date < b.date) {
@@ -100,6 +100,5 @@ class Traveler {
       return newTripCost;
     }
 }
-
 
 module.exports = Traveler;
