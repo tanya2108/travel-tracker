@@ -21,47 +21,31 @@ let destinations;
 
 const getData = () => {
   const allPromise = Promise.all([fetchData('travelers'), fetchData('trips'), fetchData('destinations')])
-    .then(data => {createTraveler(data)})
-    // .then(displayTrips());
+    .then(data => {createDashboard(data)})
 }
 
-const createTraveler = (data) => {
+const createDashboard = (data) => {
   travelers = new TravelerRepo(data[0].travelers)
   traveler = new Traveler(data[0].travelers[travelers.retrieveRandomTraveler()]);
   trips = new Trips(data[1].trips);
   destinations = new Destinations(data[2].destinations);
-  console.log(travelers)
-  console.log(traveler)
-  console.log(trips)
-  console.log(destinations)
   domUpdates.displayGreeting(traveler, traveler.returnFirstName());
   displayTrips();
+  displayCosts();
 }
 
 const displayTrips = () => {
   traveler.trips = trips.retrieveTripData(traveler.id);
   traveler.destinations = destinations.data;
-  domUpdates.displayPresentTrip(traveler.returnCurrentTripInfo('2021/11/16'), /*destinations*/);
-  domUpdates.displayUpcomingTrips(traveler.returnUpcomingTripsInfo('2021/11/16'), /*destinations*/);
-  domUpdates.displayPendingTrips(traveler.returnPendingTripsInfo('2021/11/16'), /*destinations*/);
-  domUpdates.displayPastTrips(traveler.returnPastTripsInfo('2021/11/16'), /*destinations*/);
-
+  domUpdates.displayPresentTrip(traveler.returnCurrentTripInfo('2021/11/16'), traveler);
+  domUpdates.displayUpcomingTrips(traveler.returnUpcomingTripsInfo('2021/11/16'), traveler);
+  domUpdates.displayPendingTrips(traveler.returnPendingTripsInfo('2021/11/16'), traveler);
+  domUpdates.displayPastTrips(traveler.returnPastTripsInfo('2021/11/16'), traveler)
   }
-//
-//
-//
-// const displayUpcomingTrips = () => {
-//
-// }
-//
-// const displayPendingTrips = () => {
-//
-// }
-//
-// const displayPastTrips = () => {
-//
-// }
 
+const displayCosts = () => {
+  domUpdates.displayCostPerYear(traveler.returnUserTotalPerYear('2020'));
+}
 
 const onPageLoad = () => {
   getData();
