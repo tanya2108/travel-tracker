@@ -12,11 +12,10 @@ const durationInput = document.getElementById('durationInput');
 const travelersInput = document.getElementById('travelersInput');
 const destinationInput = document.getElementById('places');
 const estimateButton = document.getElementById('estimate');
-const loginButton = document.getElementById('login');
+const loginButton = document.getElementById('loginButton');
 const userNameInput = document.getElementById('userNameInput');
 const pwInput = document.getElementById('pwInput');
 const userNameValue = document.getElementById('userNameInput').value;
-
 
 let travelers;
 let traveler;
@@ -122,7 +121,6 @@ const addTripRequest = (event) => {
       return false;
     }
   }
-
 
 loginButton.addEventListener('click', checkLogin);
 estimateButton.addEventListener('click', findEstimatedCosts);

@@ -8,7 +8,7 @@ class Traveler {
     this.estimateCosts = [];
   }
 
-  returnFirstName () {
+  returnFirstName() {
     return this.name.split(' ')[0]
   }
 
@@ -96,7 +96,7 @@ class Traveler {
         total['agentCost'] = agentFees;
           return total;
     },{lodgingCost: 0, flightCost: 0, agentCost: 0})
-      estimateCosts.push(newTripCost)
+      this.estimateCosts.push(newTripCost)
       return newTripCost;
     }
 }
