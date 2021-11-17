@@ -42,6 +42,7 @@ const domUpdates = {
   },
 
   displayPendingTrips(pendingTrips, traveler) {
+    pendingCircle.innerHTML = '';
     if(pendingTrips.length === 0) {
       pendingCircle.innerHTML += `<p> No Pending Trips </p>`
     } else {
@@ -75,13 +76,19 @@ const domUpdates = {
     postFeedback.innerText = `Trip with ID${cardID} successfully posted`;
   },
 
-  clearMessage(){
+  clearMessage() {
     postFeedback.innerText = '';
+  },
+
+  clearForm() {
+    startDateInput.value = null;
+    durationInput.value = null;
+    travelersInput.value = null;
+    destinationInput.value = null;
   },
 
   checkTripRequestForm() {
     if (startDateInput && durationInput && travelersInput && destinationInput.value) {
-      formFeedback.innerText = `Thank you for submitting your trip request!`
       return true;
     } else {
       formFeedback.innerText = `Please fill out all fields`
