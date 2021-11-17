@@ -68,6 +68,7 @@ const findEstimatedCosts = (event) => {
     suggestedActivities:[]
   }]
   domUpdates.displayEstimateCosts(traveler.returnEstimateCosts(possibleTrip))
+  setTimeout(domUpdates.clearEstimateCosts, 5000);
 }
 
 const addTripRequest = (event) => {

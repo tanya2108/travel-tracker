@@ -64,7 +64,7 @@ const domUpdates = {
   displayCostPerYear(totalCost) {
       const total = totalCost.lodgingCost + totalCost.flightCost + totalCost.agentCost
       yearlyCost.innerHTML += `
-        <h3>Total Cost: ${total.toLocaleString()}</h3>
+        <p> Total Cost: ${total.toLocaleString()}</p>
         <p> 1. Lodging Cost: ${totalCost.lodgingCost.toLocaleString()}</p>
         <p> 2. Flight Cost: ${totalCost.flightCost.toLocaleString()}</p>
         <p> 3. Agent Cost: ${totalCost.agentCost.toLocaleString()}</p>`
@@ -92,11 +92,15 @@ const domUpdates = {
   displayEstimateCosts(estimate) {
     const total = estimate.lodgingCost + estimate.flightCost + estimate.agentCost
     estimateCost.innerHTML += `
-      <h3>Estimate Total Cost: ${total.toLocaleString()}</h3>
+      <p>Estimate Total Cost: ${total.toLocaleString()}</p>
       <p> 1. Estimate Lodging Cost: ${estimate.lodgingCost.toLocaleString()}</p>
       <p> 2. Estimate Flight Cost: ${estimate.flightCost.toLocaleString()}</p>
       <p> 3. Estimate Agent Cost: ${estimate.agentCost.toLocaleString()}</p>`
     },
+
+  clearEstimateCosts() {
+    estimateCost.innerHTML = '';
+  },
 
   showMainPage() {
     show(mainPage);
