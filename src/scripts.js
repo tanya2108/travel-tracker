@@ -76,7 +76,7 @@ const findEstimatedCosts = (event) => {
 
 const addTripRequest = (event) => {
   event.preventDefault();
-  let cardID = trips.data.length + 1
+  let cardID = Math.floor(Math.random()*100000)+203;
   if (domUpdates.checkTripRequestForm()){
     const newTrip = {
         id: cardID,

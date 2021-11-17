@@ -88,11 +88,11 @@ const domUpdates = {
   },
 
   checkTripRequestForm() {
-    if (startDateInput && durationInput && travelersInput && destinationInput.value) {
-      return true;
-    } else {
+    if (!startDateInput || !durationInput || !travelersInput || !destinationInput.value) {
       formFeedback.innerText = `Please fill out all fields`
       setTimeout(this.clearMessage, 2000)
+    } else {
+      return true;
     }
   },
 
