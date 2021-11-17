@@ -1,16 +1,6 @@
 /* This is an example of how to import a partial scss file*/
 @import '_variables';
-
-*:after {
-  margin: 0;
-  text-align: center;
-}
-
-body {
-  border: 0;
-
-}
-
+@import '_reset';
 
 .hidden {
   display: none!important;
@@ -20,7 +10,6 @@ body {
 .main-page {
   background: $torquoise;
   height: 100vh;
-  border: 3px red solid;
 }
 
 .greeting-area {
@@ -31,7 +20,6 @@ body {
 }
 
 h1 {
-  border: 3px solid red;
   font-size: 60px;
 }
 
@@ -52,23 +40,22 @@ h1 {
 }
 
 .trips-area {
-  // display: flex;
-  // flex-wrap: wrap;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 80vh;
   width: 100%;
   text-align: center;
-
-
-  // grid-auto-rows: 350px;
 }
 
-
 .trip-circle {
-  border: 3px solid white;
+  border: 3px solid $white;
   width: 80%;
   height: 80%;
+}
+
+h2 {
+  font-size: 8vh;
+
 }
 
 #present {
@@ -91,18 +78,26 @@ h1 {
   border-radius: 50%
 }
 
-
 /* ----- Login Section -------- */
 
 .login-page {
-  background: blue;
   height: 100vh;
+  background: $login-background;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .login-box {
-  border: 3px solid red;
+  height: 10vh;
+  border: 3px solid $white;
+  background: $torquoise;
+  // display: flex;
+  // justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#loginButton {
+  margin-left: 40%;
 }

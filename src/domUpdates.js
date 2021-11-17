@@ -104,9 +104,8 @@ const domUpdates = {
   },
 
   displayErrorLogin(){
-    loginFeedback.innerText = 'Login Failed: Username or Password is incorrect. Please try again'
+    loginFeedback.innerText = 'Login Failed: Username or Password is incorrect.'
   }
-
 }
 
   const show = (element) => {
