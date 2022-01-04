@@ -106,8 +106,8 @@ h3 {
 }
 
 .login-box {
-  height: 10vh;
-  width: 12vh;
+  height: 11vh;
+  width: 15vh;
   border: 2px solid $white;
   background: $sky-blue;
   margin-top: 20px;
@@ -122,5 +122,6 @@ h3 {
 
 #userNameInput,
 #pwInput {
-  margin: 10px 10px 10px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
