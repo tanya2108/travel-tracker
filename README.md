@@ -31,7 +31,7 @@ Travel Tracker is an app that allows the traveler to book a trips and browse pre
 -  Run `npm start` in the terminal
 -  In the browser go to `http://localhost:8080/`
 -  In the Login Page's username, put in traveler and any number from 1 to 50 example: traveler50. In the password part, put the word travel.
-- Also clone down this [APIrepo](https://github.com/turingschool-examples/travel-tracker-api) in separate folder
+- Also clone down this [APIrepo](https://github.com/turingschool-examples/travel-tracker-api) in a separate directory
 - cd into the directory
 -  Run `npm install` in the terminal
 -  Run `npm start` in the terminal
