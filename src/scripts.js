@@ -52,8 +52,11 @@ const displayYearlyCosts = () => {
 }
 
 const updateTripsData = (tripData) => {
-  traveler.trips.push(tripData)
-}
+  trips.data.push(tripData.newTrip);
+  traveler.trips.push(tripData.newTrip);
+  domUpdates.displayPendingTrips(traveler.returnPendingTripsInfo('2021/11/16'), traveler);
+  domUpdates.clearForm();
+  }
 
 const findEstimatedCosts = (event) => {
   event.preventDefault();
@@ -73,7 +76,7 @@ const findEstimatedCosts = (event) => {
 
 const addTripRequest = (event) => {
   event.preventDefault();
-  let cardID = trips.data.length + 1;
+  let cardID = Math.floor(Math.random()*100000)+203;
   if (domUpdates.checkTripRequestForm()){
     const newTrip = {
         id: cardID,
@@ -87,7 +90,6 @@ const addTripRequest = (event) => {
       }
       addTrip(newTrip)
         .then(data => updateTripsData(data))
-        .catch(error => console.log(error))
         domUpdates.showSuccessMessage(cardID);
         setTimeout(domUpdates.clearMessage, 5000);
     }
