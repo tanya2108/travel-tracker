@@ -92,12 +92,13 @@ h2 {
 /* ----- Login Section -------- */
 h3 {
   color: $sky-blue;
-  font-size: 10vh;
+  font-size: 15vh;
 }
 
 .login-page {
+  background-image: url("https://media.giphy.com/media/1TpGKApbHmkZa/giphy.gif");
+  background-size: cover;
   height: 100vh;
-  background: $login-background;
   display: flex;
   flex-direction: column;
   justify-content: center;
