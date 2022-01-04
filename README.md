@@ -20,8 +20,9 @@ Travel Tracker is an app that allows the traveler to book a trips and browse pre
 -  Node.js
 
 ## Illustrations
-<img width="1000" alt="Screen Shot 2021-11-16 at 17 38 24" src="https://user-images.githubusercontent.com/87670195/142093816-2b79c787-d71e-4ea7-b997-8183cface28a.png">
-<img width="1000" alt="Screen Shot 2021-11-16 at 17 41 58" src="https://user-images.githubusercontent.com/87670195/142093753-3043ce4c-c7e3-4005-a81b-69f2a998ffca.png">
+<img width="1000" alt="Screen Shot 2022-01-03 at 21 57 54" src="https://user-images.githubusercontent.com/87670195/148015890-16e59965-2383-4f55-9387-f5bf68925472.png">
+
+<img width="1000" alt="Screen Shot 2022-01-03 at 21 58 27" src="https://user-images.githubusercontent.com/87670195/148015883-64244556-d7a5-489d-b85d-4d5f56ef3400.png">
 
 ## Install
 -  Clone down this [repo](https://github.com/tanyazhuge/travel-tracker) to your machine
@@ -30,6 +31,10 @@ Travel Tracker is an app that allows the traveler to book a trips and browse pre
 -  Run `npm start` in the terminal
 -  In the browser go to `http://localhost:8080/`
 -  In the Login Page's username, put in traveler and any number from 1 to 50 example: traveler50. In the password part, put the word travel.
+- Also clone down this [APIrepo](https://github.com/turingschool-examples/travel-tracker-api) in separate folder
+- cd into the directory
+-  Run `npm install` in the terminal
+-  Run `npm start` in the terminal
 
 ## Additions
 - Create additional pages for different status of trips.
