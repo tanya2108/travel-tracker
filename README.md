@@ -22,7 +22,8 @@ Travel Tracker is an app that allows the traveler to book a trips and browse pre
 ## Illustrations
 <img width="1000" alt="Screen Shot 2022-01-03 at 21 57 54" src="https://user-images.githubusercontent.com/87670195/148015890-16e59965-2383-4f55-9387-f5bf68925472.png">
 
-<img width="1000" alt="Screen Shot 2022-01-03 at 21 58 27" src="https://user-images.githubusercontent.com/87670195/148015883-64244556-d7a5-489d-b85d-4d5f56ef3400.png">
+<img width="1000" alt="Screen Shot 2022-04-01 at 02 04 42"
+src="https://user-images.githubusercontent.com/87670195/161233017-3093d13c-80c7-4437-ae60-b2a1e39f31c4.png">
 
 ## Install
 -  Clone down this [repo](https://github.com/tanyazhuge/travel-tracker) to your machine
