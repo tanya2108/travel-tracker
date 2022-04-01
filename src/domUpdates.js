@@ -26,7 +26,10 @@ const domUpdates = {
       presentCircle.innerHTML += `<p> No Present Trip </p>`
     } else {
       presentTrip.forEach((trip) => {
-        presentCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p> `
+        presentCircle.innerHTML += `<div class="trip-card"><p>Date: ${trip.date}</p> 
+        <p>Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}</p> 
+        <p>Duration: ${trip.duration}</p> 
+        <img class="dest-image"src="${traveler.retrieveDestinationData(trip.destinationID).image}" alt="${traveler.retrieveDestinationData(trip.destinationID).alt}"></div>`
     });
   }
   },
@@ -36,7 +39,10 @@ const domUpdates = {
       upcomingCircle.innerHTML += `<p> No Upcoming Trips </p>`
     } else {
       upcomingTrips.forEach((trip) => {
-        upcomingCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p> `
+        upcomingCircle.innerHTML += `<div class="trip-card"><p>Date: ${trip.date}</p> 
+        <p>Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}</p> 
+        <p>Duration: ${trip.duration} </p>
+        <img class="dest-image"src="${traveler.retrieveDestinationData(trip.destinationID).image}" alt="${traveler.retrieveDestinationData(trip.destinationID).alt}"></div>`  
       });
     }
   },
@@ -47,7 +53,10 @@ const domUpdates = {
       pendingCircle.innerHTML += `<p> No Pending Trips </p>`
     } else {
       pendingTrips.forEach((trip) => {
-        pendingCircle.innerHTML += `<p>Date: ${trip.date}, Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p> `
+        pendingCircle.innerHTML += `<div class="trip-card"><p>Date: ${trip.date}</p> 
+        <p>Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}</p>
+        <p> Duration: ${trip.duration}</p> 
+        <img class="dest-image"src="${traveler.retrieveDestinationData(trip.destinationID).image}" alt="${traveler.retrieveDestinationData(trip.destinationID).alt}"></div>`
       });
     }
   },
@@ -57,7 +66,10 @@ const domUpdates = {
       pastCircle.innerHTML += `<p> No Past Trips </p>`
     } else {
     pastTrips.forEach((trip) => {
-      pastCircle.innerHTML += `<p>Date: ${trip.date}, Destination:            ${traveler.retrieveDestinationData(trip.destinationID).destination}, Duration: ${trip.duration} </p>`
+      pastCircle.innerHTML += `<div class="trip-card"><p>Date: ${trip.date}</p>
+      <p>Destination: ${traveler.retrieveDestinationData(trip.destinationID).destination}</p>
+      <p>Duration: ${trip.duration}</p>
+      <img class="dest-image"src="${traveler.retrieveDestinationData(trip.destinationID).image}" alt="${traveler.retrieveDestinationData(trip.destinationID).alt}"></div>`
     });
   }
 },
